@@ -22,6 +22,15 @@ floating checkbox list — instead of removing them one at a time.
 omarchy plugin add https://github.com/antoniowav/omarchy-appsweep --enable
 ```
 
+To remove the plugin:
+
+```bash
+omarchy plugin remove io.github.antoniowav.appsweep
+```
+
+Removing the plugin never touches your packages or web apps — it only
+removes the panel itself.
+
 App Sweep is a panel plugin: it adds no bar widget. Summon it however you like:
 
 ```bash
@@ -72,6 +81,17 @@ o.bind("SUPER SHIFT", "BACKSPACE", "App Sweep", "omarchy-shell shell toggle io.g
   is removed and the error is shown in the panel.
 - The plugin itself never elevates: polkit (`pkexec`) prompts for
   authentication on every package removal.
+
+## Dependencies
+
+Everything App Sweep uses ships with a stock Omarchy install:
+
+- `pacman` and `polkit` (`pkexec`) for package removal
+- `expac` for installed sizes and versions — optional; without it the
+  packages tab falls back to `pacman -Qe` and omits sizes
+- `omarchy-webapp-remove` for web app launchers
+
+No network access, no API keys, no configuration files are written.
 
 ## License
 
