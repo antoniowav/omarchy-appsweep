@@ -223,6 +223,7 @@ Item {
       root.phase = "list"
       if (exitCode === 0) {
         root.statusText = "Removed " + root.pluralize(root.lastRemoveCount, "package")
+        root.filterText = ""
         root.checkedPkgs = ({})
         root.checkedRev++
       } else if (exitCode === 126) {
@@ -243,6 +244,7 @@ Item {
       root.statusText = exitCode === 0
         ? "Removed " + root.pluralize(root.lastRemoveCount, "web app")
         : "Some web apps could not be removed"
+      if (exitCode === 0) root.filterText = ""
       root.checkedApps = ({})
       root.checkedRev++
       webappListProc.running = true
