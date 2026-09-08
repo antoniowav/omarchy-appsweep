@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.antoniowav.appsweep",
   "name": "App Sweep",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Antonio Piattelli",
   "license": "MIT",
   "description": "Bulk-remove packages and web apps from a floating checkbox list. Summon from the Omarchy menu or a keybind.",

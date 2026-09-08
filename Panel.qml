@@ -138,7 +138,11 @@ Item {
     root.checkedRev++
   }
 
+  // Only acts on a filtered list: with no filter this would select every
+  // explicitly installed package, one habitual confirm away from removing
+  // OS-critical packages.
   function checkAllVisible() {
+    if (!root.filterText) return
     var map = currentMap()
     for (var i = 0; i < root.filteredItems.length; i++) map[root.filteredItems[i].name] = true
     root.checkedRev++
@@ -378,6 +382,8 @@ Item {
             text: "All"
             fontFamily: root.fontFamily
             foreground: root.foreground
+            opacity: root.filterText.length > 0 ? 1 : 0.35
+            tooltipText: "Selects the filtered rows — type a filter first"
             onClicked: root.checkAllVisible()
           }
           Button {

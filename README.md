@@ -13,8 +13,10 @@ floating checkbox list — instead of removing them one at a time.
   polkit.
 - **Web Apps tab** — every launcher created by `omarchy webapp install`.
   Checked launchers are removed with the stock `omarchy-webapp-remove`.
-- Type to filter, click rows to toggle, `All`/`None` for the visible rows,
-  and a confirmation step before anything is touched.
+- Type to filter, click rows to toggle, and a confirmation step before
+  anything is touched. `All` selects the rows matching your filter — it is
+  deliberately disabled when no filter is active, so it can never mean
+  "every package on the system". `None` always clears the selection.
 
 ## Install
 
